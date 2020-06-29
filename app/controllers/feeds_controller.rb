@@ -1,5 +1,6 @@
 class FeedsController < ApplicationController
   before_action :set_feed, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   # GET /feeds
   # GET /feeds.json
   def index
@@ -66,7 +67,18 @@ class FeedsController < ApplicationController
     @feed = current_user.feeds.build(feed_params)
     render :new if @feed.invalid?
   end
-
+  def ensure_correct_user
+    @feed = Feed.find_by(id: params[:id])
+    if current_user == nil
+      flash[:notice] = "ログインしてください"
+      redirect_to new_session_path
+    else
+      if @feed.user_id != current_user.id
+        flash[:notice] = "権限がありません"
+        redirect_to new_session_path
+      end
+    end
+  end
   private
   def set_feed
     @feed = Feed.find(params[:id])

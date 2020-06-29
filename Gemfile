@@ -67,3 +67,8 @@ gem 'mini_magick'
 
 #has_secure_passwordメソッドを使用するため
 gem 'bcrypt', '3.1.11'
+
+#デバック
+  gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'

@@ -1,14 +1,12 @@
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="bishlog.css">
-  <link rel="stylesheet" type="text/css" href="normalize.css">
 </head>
 <header class="header">
-  <p>Bishlog</p>
+  <h1>Feeds</h1>
 </header>
 <%= form_with(model: @feed, local: true) do |form| %>
   <div class="wellcome">
-    <%= link_to "Welcome to Bishlog!!", feeds_path %>
+    <%= link_to "Welcome to Feeds!!", feeds_path %>
   </div>
 <% end %>
 <footer class="footer">

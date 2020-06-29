@@ -1,2 +1,8 @@
-<h1><%= @user.name %>のページ</h1>
-<p>メールアドレス: <%= @user.email %></p>
+<% if logged_in? %>
+    <h1><%= @user.name %>さんはログインしました。</h1>
+    <p>メールアドレス: <%= @user.email %></p>
+    <%= link_to 'Feeds', feeds_path %>
+<% else %>
+    <h1><%= @user.name %>さんの登録が完了しました。ログインしてください。</h1>
+    <p>メールアドレス: <%= @user.email %></p>
+<% end %>

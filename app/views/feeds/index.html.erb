@@ -14,6 +14,13 @@
 
   <tbody>
     <% @feeds.each do |feed| %>
+      <% if current_user == nil %>
+      <tr>
+        <td><%= feed.user.name %></td>
+        <td><%= feed.image %></td>
+        <td><%= feed.content %></td>
+      </tr>
+      <% elsif feed.user_id == current_user.id %>
       <tr>
         <td><%= feed.user.name %></td>
         <td><%= feed.image %></td>
@@ -22,6 +29,13 @@
         <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
         <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% else %>
+      <tr>
+        <td><%= feed.user.name %></td>
+        <td><%= feed.image %></td>
+        <td><%= feed.content %></td>
+      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
