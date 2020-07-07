@@ -1,14 +1,9 @@
 <head>
   <meta charset="UTF-8">
 </head>
-<header class="header">
-  <h1>Feeds</h1>
-</header>
+  <h1 class="title_feeds">Facebook Clone</h1>
 <%= form_with(model: @feed, local: true) do |form| %>
-  <div class="wellcome">
-    <%= link_to "Welcome to Feeds!!", feeds_path %>
+  <div class="submit_index">
+    <%= link_to "投稿一覧へ", feeds_path %>
   </div>
 <% end %>
-<footer class="footer">
-  <p>Copyright © 2020 SASAKI All RIGHTS RESERVED.</p>
-</footer>
