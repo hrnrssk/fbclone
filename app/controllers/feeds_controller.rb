@@ -69,7 +69,7 @@ class FeedsController < ApplicationController
   end
   def ensure_correct_user
     @feed = Feed.find_by(id: params[:id])
-    if current_user == nil
+    if current_user.name.empty?
       flash[:notice] = "ログインしてください"
       redirect_to new_session_path
     else
