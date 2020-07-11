@@ -15,7 +15,7 @@
       <%= form.text_field :content, size: 50%>
     </div>
     <div class="feed_image">
-      <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+      <%= image_tag(@feed.image.url, class: 'feed_img') if @feed.image && @feed.image.url %>
     </div>
     <div class="file_field">
       <%= form.file_field :image %>
