@@ -6,7 +6,7 @@
     <%= form.hidden_field :content %>
   </div>
   <div class="feed_image">
-    <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+    <%= image_tag(@feed.image.url), if @feed.image && @feed.image.url %>
   </div>
   <div class="image_cache">
     <%= form.hidden_field :image_cache %>

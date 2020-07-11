@@ -3,7 +3,7 @@
     コメント: <%= @feed.content %>
   </div>
   <div class="feed_image">
-    <%= image_tag @feed.image.url %>
+    <%= image_tag @feed.image.url, class: 'feed_img' %>
   </div>
 <% if current_user == nil %>
   <div class="back">
