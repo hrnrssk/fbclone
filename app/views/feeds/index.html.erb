@@ -4,21 +4,21 @@
       <% if current_user == nil %>
       <tr>
         <td><%= feed.user.name %></td>
-        <td><%= link_to '投稿を見る', feed %></td>
+        <td><%= link_to '投稿をみる', feed %></td>
         <td ><%= feed.content %></td>
         <td><%= feed.image %></td>
       </tr>
       <% elsif feed.user_id == current_user.id %>
       <tr>
         <td><%= feed.user.name %></td>
-        <td><%= link_to '投稿を見る', feed %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '編集する', edit_feed_path(feed) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '削除する', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '投稿をみる', feed %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '編集する', edit_feed_path(feed) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '削除する', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td ><%= feed.content %></td>
         <td><%= feed.image %></td>
       </tr>
       <% else %>
       <tr>
         <td><%= feed.user.name %>
-        <td><%= link_to '投稿を見る', feed %></td>
+        <td><%= link_to '投稿をみる', feed %></td>
         <td ><%= feed.content %></td>
         <td><%= feed.image %></td>
       </tr>
